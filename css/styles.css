@@ -1,0 +1,692 @@
+/* ============================================================
+   PALM COAST PHYSICAL THERAPY — STYLESHEET
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. DESIGN TOKENS
+   ------------------------------------------------------------ */
+:root {
+  --color-primary:       #0e6f8c;   /* teal */
+  --color-primary-dark:  #0a5570;   /* teal dark (hover) */
+  --color-accent:        #f78f1e;   /* orange */
+  --color-accent-dark:   #d97410;   /* orange dark (hover) */
+  --color-text:          #1a1a1a;
+  --color-text-light:    #ffffff;
+  --color-bg:            #ffffff;
+  --color-bg-light:      #f5f8fa;
+  --color-bg-gray:       #eef2f5;
+  --color-border:        #d0dde4;
+  --color-footer-bg:     #0a3d4f;
+
+  --font-heading:        'Patrick Hand', cursive;
+  --font-body:           'Inter', sans-serif;
+
+  --radius:              8px;
+  --radius-lg:           16px;
+  --shadow-sm:           0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md:           0 4px 20px rgba(0, 0, 0, 0.12);
+
+  --container-max:       1140px;
+  --container-pad:       clamp(1rem, 4vw, 2rem);
+
+  --header-h:            72px;
+  --transition:          0.25s ease;
+}
+
+/* ------------------------------------------------------------
+   2. RESET & BASE
+   ------------------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition), opacity var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ------------------------------------------------------------
+   3. TYPOGRAPHY
+   ------------------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  color: var(--color-text);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+h4 { font-size: 1.1rem; font-family: var(--font-body); font-weight: 600; }
+
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+/* ------------------------------------------------------------
+   4. LAYOUT UTILITIES
+   ------------------------------------------------------------ */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* ------------------------------------------------------------
+   5. BUTTONS
+   ------------------------------------------------------------ */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Primary (teal) */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border-color: var(--color-primary);
+}
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+/* Accent (orange) */
+.btn--accent {
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
+  border-color: var(--color-accent);
+}
+.btn--accent:hover {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+/* White (used on teal backgrounds) */
+.btn--white {
+  background-color: var(--color-text-light);
+  color: var(--color-primary);
+  border-color: var(--color-text-light);
+}
+.btn--white:hover {
+  background-color: transparent;
+  color: var(--color-text-light);
+}
+
+/* ------------------------------------------------------------
+   6. SECTION SHARED STYLES
+   ------------------------------------------------------------ */
+.section {
+  padding-block: clamp(4rem, 8vw, 6rem);
+}
+
+.section--light { background-color: var(--color-bg); }
+.section--gray  { background-color: var(--color-bg-gray); }
+
+.section--teal {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+.section--teal h2,
+.section--teal h3,
+.section--teal p {
+  color: var(--color-text-light);
+}
+
+.section__heading {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section__heading + p,
+.section__heading + .section__body {
+  margin-top: 1.5rem;
+}
+
+.section__cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* ------------------------------------------------------------
+   7. HEADER
+   ------------------------------------------------------------ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.header__logo img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header__nav {
+  flex: 1;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  justify-content: center;
+}
+
+.nav__link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  position: relative;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--transition);
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+  width: 100%;
+}
+
+.header__cta {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  padding: 0.6rem 1.25rem;
+}
+
+/* Hamburger toggle (hidden on desktop) */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.nav__toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* Hamburger open state */
+.nav__toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ------------------------------------------------------------
+   8. HERO — ANIMATED BACKGROUND (Ken Burns)
+   ------------------------------------------------------------ */
+@keyframes kenBurns {
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.08); }
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Background image layer — ONLY this element animates */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: kenBurns 12s ease-in-out infinite alternate;
+  transform-origin: center;
+  /* Fallback color if image not yet loaded */
+  background-color: var(--color-primary-dark);
+}
+
+/* Dark overlay for text contrast — no animation */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 61, 79, 0.72) 0%,
+    rgba(14, 111, 140, 0.55) 100%
+  );
+}
+
+/* Content — fully static, no animation */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  color: var(--color-text-light);
+  max-width: 720px;
+  padding-block: 4rem;
+}
+
+.hero__title {
+  color: var(--color-text-light);
+  margin-bottom: 1.25rem;
+}
+
+.hero__sub {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+}
+
+/* ------------------------------------------------------------
+   9. THE PALM COAST DIFFERENCE
+   ------------------------------------------------------------ */
+.section__body {
+  max-width: 780px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.difference__list {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.difference__list li {
+  padding-left: 1.75rem;
+  position: relative;
+  font-size: 1rem;
+}
+
+.difference__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+/* ------------------------------------------------------------
+   10. SERVICES
+   ------------------------------------------------------------ */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.service-card__icon {
+  width: 56px;
+  height: 56px;
+  margin-inline: auto;
+  margin-bottom: 1.25rem;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(14, 111, 140, 0.1);
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.service-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.service-card__name {
+  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+}
+
+.service-card__desc {
+  font-size: 0.9375rem;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   11. MEET THE TEAM
+   ------------------------------------------------------------ */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.team-card {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.team-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.team-card__photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+  /* Placeholder background while image loads */
+  background-color: var(--color-bg-light);
+}
+
+.team-card__info {
+  padding: 1.5rem;
+}
+
+.team-card__name {
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.team-card__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.team-card__bio {
+  font-size: 0.9375rem;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------
+   12. TESTIMONIALS
+   ------------------------------------------------------------ */
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-top: 3rem;
+}
+
+.testimonial-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.testimonial-card__quote {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.testimonial-card__attr {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* ------------------------------------------------------------
+   13. FOOTER
+   ------------------------------------------------------------ */
+.site-footer {
+  background-color: var(--color-footer-bg);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+  gap: 3rem;
+  padding-block: 4rem;
+}
+
+.footer__logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.footer__tagline {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.footer__heading {
+  color: var(--color-text-light);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+}
+
+.footer__contact address p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.footer__contact a:hover,
+.footer__links a:hover {
+  color: var(--color-accent);
+}
+
+.footer__hours {
+  margin-top: 1.5rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__links a {
+  font-size: 0.9375rem;
+  transition: color var(--transition);
+}
+
+.social__icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--color-text-light);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.social__link:hover {
+  background-color: var(--color-accent);
+  color: var(--color-text-light);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-block: 1.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ------------------------------------------------------------
+   14. RESPONSIVE — TABLET (max 900px)
+   ------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .services__grid,
+  .testimonials__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ------------------------------------------------------------
+   15. RESPONSIVE — MOBILE (max 640px)
+   ------------------------------------------------------------ */
+@media (max-width: 640px) {
+  /* Header — show hamburger, hide nav inline */
+  .header__nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem var(--container-pad);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition), opacity var(--transition);
+  }
+
+  .header__nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .header__cta {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+
+  /* Sections */
+  .services__grid,
+  .team__grid,
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-block: 2.5rem;
+  }
+}
