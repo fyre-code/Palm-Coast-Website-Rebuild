@@ -6,8 +6,8 @@
    1. DESIGN TOKENS
    ------------------------------------------------------------ */
 :root {
-  --color-primary:       #0e6f8c;   /* teal */
-  --color-primary-dark:  #0a5570;   /* teal dark (hover) */
+  --color-primary:       #1a8fa0;   /* teal */
+  --color-primary-dark:  #157a8a;   /* teal dark (hover) */
   --color-accent:        #f78f1e;   /* orange */
   --color-accent-dark:   #d97410;   /* orange dark (hover) */
   --color-text:          #1a1a1a;
@@ -16,7 +16,7 @@
   --color-bg-light:      #f5f8fa;
   --color-bg-gray:       #eef2f5;
   --color-border:        #d0dde4;
-  --color-footer-bg:     #0a3d4f;
+  --color-footer-bg:     #f78f1e;
 
   --font-heading:        'Lora', serif;
   --font-body:           'Inter', sans-serif;
@@ -317,7 +317,7 @@ p:last-child { margin-bottom: 0; }
   animation: kenBurns 12s ease-in-out infinite alternate;
   transform-origin: center;
   /* Fallback color if image not yet loaded */
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
 }
 
 /* Dark overlay for text contrast — no animation */
@@ -326,8 +326,8 @@ p:last-child { margin-bottom: 0; }
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(10, 61, 79, 0.72) 0%,
-    rgba(14, 111, 140, 0.55) 100%
+    rgba(21, 122, 138, 0.55) 0%,
+    rgba(26, 143, 160, 0.35) 100%
   );
 }
 
@@ -424,7 +424,7 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(14, 111, 140, 0.1);
+  background-color: rgba(26, 143, 160, 0.1);
   border-radius: 50%;
   padding: 12px;
 }
@@ -579,7 +579,7 @@ p:last-child { margin-bottom: 0; }
 
 .footer__contact a:hover,
 .footer__links a:hover {
-  color: var(--color-accent);
+  color: var(--color-text-light);
 }
 
 .footer__hours {
@@ -615,7 +615,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .social__link:hover {
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   color: var(--color-text-light);
 }
 
@@ -628,7 +628,65 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ------------------------------------------------------------
-   14. RESPONSIVE — TABLET (max 900px)
+   14. ALTERNATING SECTION BACKGROUNDS & CTA COLORS
+   ------------------------------------------------------------ */
+
+/* --- Backgrounds (ID selectors override class-based rules) --- */
+#difference  { background-color: var(--color-accent); }
+#services    { background-color: var(--color-primary); }
+#team        { background-color: var(--color-accent); }
+#testimonials { background-color: var(--color-primary); }
+
+/* --- White text for all content sections --- */
+#difference,
+#services,
+#team,
+#testimonials {
+  color: var(--color-text-light);
+}
+
+#difference h2, #difference h3, #difference p, #difference li,
+#services h2, #services h3, #services p,
+#team h2, #team h3, #team p,
+#testimonials h2, #testimonials h3, #testimonials p {
+  color: var(--color-text-light);
+}
+
+/* Bullet dots on orange bg: switch to white */
+#difference .difference__list li::before {
+  background-color: var(--color-text-light);
+}
+
+/* --- CTA button colors: opposite of section background --- */
+
+/* Orange sections (#difference, #team) → teal CTA */
+#difference .section__cta .btn,
+#team .section__cta .btn {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-light);
+}
+#difference .section__cta .btn:hover,
+#team .section__cta .btn:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+/* Teal sections (#services, #testimonials) → orange CTA */
+#services .section__cta .btn,
+#testimonials .section__cta .btn {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text-light);
+}
+#services .section__cta .btn:hover,
+#testimonials .section__cta .btn:hover {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+/* ------------------------------------------------------------
+   16. RESPONSIVE — TABLET (max 900px)
    ------------------------------------------------------------ */
 @media (max-width: 900px) {
   .services__grid,
@@ -647,7 +705,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ------------------------------------------------------------
-   15. RESPONSIVE — MOBILE (max 640px)
+   17. RESPONSIVE — MOBILE (max 640px)
    ------------------------------------------------------------ */
 @media (max-width: 640px) {
   /* Header — show hamburger, hide nav inline */
