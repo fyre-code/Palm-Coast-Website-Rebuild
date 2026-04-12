@@ -391,6 +391,20 @@ p:last-child { margin-bottom: 0; }
   border-radius: 50%;
 }
 
+.difference__images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.difference__img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
 /* ------------------------------------------------------------
    10. SERVICES
    ------------------------------------------------------------ */
@@ -710,6 +724,10 @@ p:last-child { margin-bottom: 0; }
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .difference__images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .footer__inner {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
@@ -759,7 +777,8 @@ p:last-child { margin-bottom: 0; }
   /* Sections */
   .services__grid,
   .team__grid,
-  .testimonials__grid {
+  .testimonials__grid,
+  .difference__images {
     grid-template-columns: 1fr;
   }
 
