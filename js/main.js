@@ -63,6 +63,14 @@
   }
 
   /* ----------------------------------------------------------
+     Dynamic Copyright Year
+     ---------------------------------------------------------- */
+  const yearEl = document.getElementById('copyright-year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  /* ----------------------------------------------------------
      Sticky Header Shadow on Scroll
      ---------------------------------------------------------- */
   const header = document.querySelector('.site-header');
