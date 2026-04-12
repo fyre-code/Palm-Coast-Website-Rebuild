@@ -331,10 +331,69 @@ p:last-child { margin-bottom: 0; }
   );
 }
 
+/* PT Tool drift keyframes */
+@keyframes toolDriftV {
+  from { transform: translateY(0)      rotate(0deg); }
+  to   { transform: translateY(-20px)  rotate(3deg); }
+}
+@keyframes toolDriftH {
+  from { transform: translateX(0)      rotate(0deg); }
+  to   { transform: translateX(12px)   rotate(-4deg); }
+}
+@keyframes toolDriftD {
+  from { transform: translate(0, 0)          rotate(0deg); }
+  to   { transform: translate(-10px, -15px)  rotate(5deg); }
+}
+
+.hero__tools {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__tool {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.11);
+}
+
+.hero__tool--ball {
+  width: 90px;
+  top: 8%;
+  right: 6%;
+  animation: toolDriftV 9s ease-in-out infinite alternate;
+}
+.hero__tool--roller {
+  width: 110px;
+  top: 48%;
+  right: 3%;
+  animation: toolDriftH 13s ease-in-out infinite alternate;
+}
+.hero__tool--band {
+  width: 100px;
+  top: 22%;
+  right: 14%;
+  animation: toolDriftD 11s ease-in-out infinite alternate;
+}
+.hero__tool--dumbbell {
+  width: 100px;
+  bottom: 18%;
+  right: 7%;
+  animation: toolDriftV 15s ease-in-out infinite alternate;
+  animation-delay: -4s;
+}
+.hero__tool--board {
+  width: 95px;
+  top: 5%;
+  left: 2%;
+  animation: toolDriftH 10s ease-in-out infinite alternate;
+  animation-delay: -7s;
+}
+
 /* Content — fully static, no animation */
 .hero__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   color: var(--color-text-light);
   max-width: 720px;
   padding-top: 1.5rem;
