@@ -18,7 +18,7 @@
   --color-border:        #d0dde4;
   --color-footer-bg:     #0a3d4f;
 
-  --font-heading:        'Patrick Hand', cursive;
+  --font-heading:        'Lora', serif;
   --font-body:           'Inter', sans-serif;
 
   --radius:              8px;
@@ -79,14 +79,16 @@ address {
    ------------------------------------------------------------ */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+  font-style: italic;
   line-height: 1.25;
   color: var(--color-text);
+  text-align: center;
 }
 
 h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
 h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); }
 h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
-h4 { font-size: 1.1rem; font-family: var(--font-body); font-weight: 600; }
+h4 { font-size: 1.1rem; }
 
 p { margin-bottom: 1rem; }
 p:last-child { margin-bottom: 0; }
@@ -342,8 +344,6 @@ p:last-child { margin-bottom: 0; }
 .hero__title {
   color: var(--color-text-light);
   margin-bottom: 1.25rem;
-  font-family: 'Lora', serif;
-  font-style: italic;
 }
 
 .hero__sub {
