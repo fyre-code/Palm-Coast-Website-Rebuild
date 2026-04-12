@@ -342,6 +342,8 @@ p:last-child { margin-bottom: 0; }
 .hero__title {
   color: var(--color-text-light);
   margin-bottom: 1.25rem;
+  font-family: 'Lora', serif;
+  font-style: italic;
 }
 
 .hero__sub {
