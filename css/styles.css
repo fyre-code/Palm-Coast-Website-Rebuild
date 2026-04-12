@@ -29,7 +29,7 @@
   --container-max:       1140px;
   --container-pad:       clamp(1rem, 4vw, 2rem);
 
-  --header-h:            72px;
+  --header-h:            100px;
   --transition:          0.25s ease;
 }
 
@@ -210,7 +210,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .header__logo img {
-  height: 48px;
+  height: 84px;
   width: auto;
   object-fit: contain;
 }
