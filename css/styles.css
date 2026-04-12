@@ -107,7 +107,7 @@ p:last-child { margin-bottom: 0; }
   display: inline-block;
   padding: 0.75rem 1.75rem;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
   font-weight: 600;
   border-radius: var(--radius);
   border: 2px solid transparent;
@@ -354,7 +354,6 @@ p:last-child { margin-bottom: 0; }
   display: block;
   width: fit-content;
   margin-inline: auto;
-  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
 }
 
 /* ------------------------------------------------------------
