@@ -16,7 +16,7 @@
   --color-bg-light:      #f5f8fa;
   --color-bg-gray:       #eef2f5;
   --color-border:        #d0dde4;
-  --color-footer-bg:     #f78f1e;
+  --color-footer-bg:     #ffffff;
 
   --font-heading:        'Lora', serif;
   --font-body:           'Inter', sans-serif;
@@ -540,7 +540,7 @@ p:last-child { margin-bottom: 0; }
    ------------------------------------------------------------ */
 .site-footer {
   background-color: var(--color-footer-bg);
-  color: rgba(255, 255, 255, 0.85);
+  color: #1a8fa0;
 }
 
 .footer__inner {
@@ -551,7 +551,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .footer__logo {
-  height: 48px;
+  height: 126px;
   width: auto;
   object-fit: contain;
   margin-bottom: 1rem;
@@ -563,7 +563,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .footer__heading {
-  color: var(--color-text-light);
+  color: #1a8fa0;
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 700;
@@ -608,9 +608,9 @@ p:last-child { margin-bottom: 0; }
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(26, 143, 160, 0.12);
   border-radius: 50%;
-  color: var(--color-text-light);
+  color: #1a8fa0;
   transition: background-color var(--transition), color var(--transition);
 }
 
@@ -620,11 +620,11 @@ p:last-child { margin-bottom: 0; }
 }
 
 .footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(26, 143, 160, 0.2);
   padding-block: 1.25rem;
   text-align: center;
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(26, 143, 160, 0.6);
 }
 
 /* ------------------------------------------------------------
