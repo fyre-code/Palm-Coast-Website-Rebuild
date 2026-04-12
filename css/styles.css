@@ -193,8 +193,7 @@ p:last-child { margin-bottom: 0; }
    7. HEADER
    ------------------------------------------------------------ */
 .site-header {
-  position: sticky;
-  top: 0;
+  position: static;
   z-index: 100;
   height: var(--header-h);
   background-color: var(--color-bg);
