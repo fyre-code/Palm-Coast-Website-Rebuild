@@ -391,22 +391,22 @@ p:last-child { margin-bottom: 0; }
 }
 .hero__tool--loop {
   width: 85px;
-  top: 30%;
-  left: 1%;
+  top: 32%;
+  left: 9%;
   animation: toolDriftD 14s ease-in-out infinite alternate;
   animation-delay: -3s;
 }
 .hero__tool--crutch {
   width: 45px;
-  top: 52%;
-  left: 3%;
+  top: 55%;
+  left: 1%;
   animation: toolDriftV 16s ease-in-out infinite alternate;
   animation-delay: -9s;
 }
 .hero__tool--pack {
   width: 90px;
-  bottom: 14%;
-  left: 2%;
+  bottom: 10%;
+  left: 8%;
   animation: toolDriftH 12s ease-in-out infinite alternate;
   animation-delay: -5s;
 }
