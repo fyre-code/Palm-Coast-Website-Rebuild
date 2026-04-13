@@ -85,7 +85,8 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 { font-size: clamp(2rem, 5vw, 3.25rem); }
+h1, h2         { font-size: clamp(2rem, 5vw, 3.25rem); }
+h3, h4, h5, h6 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
 
 p { margin-bottom: 1rem; }
 p:last-child { margin-bottom: 0; }
