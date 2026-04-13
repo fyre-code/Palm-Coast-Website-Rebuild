@@ -85,4 +85,32 @@
     }, { passive: true });
   }
 
+  /* ----------------------------------------------------------
+     Team Carousel
+     ---------------------------------------------------------- */
+  const carousel = document.getElementById('team-carousel');
+
+  if (carousel) {
+    const slides = carousel.querySelectorAll('.carousel__slide');
+    const dots   = carousel.querySelectorAll('.carousel__dot');
+    const btnPrev = carousel.querySelector('.carousel__btn--prev');
+    const btnNext = carousel.querySelector('.carousel__btn--next');
+    let current = 0;
+
+    function goTo(index) {
+      slides[current].classList.remove('is-active');
+      dots[current].classList.remove('is-active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('is-active');
+      dots[current].classList.add('is-active');
+    }
+
+    if (btnPrev) btnPrev.addEventListener('click', function () { goTo(current - 1); });
+    if (btnNext) btnNext.addEventListener('click', function () { goTo(current + 1); });
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { goTo(i); });
+    });
+  }
+
 })();

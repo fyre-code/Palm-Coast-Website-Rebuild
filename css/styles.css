@@ -625,59 +625,127 @@ p:last-child { margin-bottom: 0; }
 }
 
 /* ------------------------------------------------------------
-   13. MEET THE TEAM
+   13. TEAM CAROUSEL
    ------------------------------------------------------------ */
-.team__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+/* Carousel wrapper */
+.team-carousel {
   margin-top: 3rem;
 }
 
-.team-card {
+/* Slides — only .is-active shows */
+.carousel__track {
+  position: relative;
+}
+
+.carousel__slide {
+  display: none;
+  align-items: stretch;
   background-color: var(--color-bg);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition), transform var(--transition);
-}
-
-.team-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
 }
 
-.team-card__photo {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+.carousel__slide.is-active {
+  display: flex;
+}
+
+/* Photo — left 40% */
+.carousel__photo {
+  width: 40%;
+  flex-shrink: 0;
   object-fit: cover;
   object-position: top;
-  /* Placeholder background while image loads */
   background-color: var(--color-bg-light);
 }
 
-.team-card__info {
-  padding: 1.5rem;
+/* Info — right 60% */
+.carousel__info {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
-.team-card__name {
+.carousel__name {
   color: var(--color-primary);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
+  text-align: left;
 }
 
-.team-card__title {
-  font-size: 0.875rem;
+.carousel__title {
+  font-size: clamp(1.25rem, 2.75vw, 1.75rem);
   font-weight: 600;
   color: var(--color-accent);
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  margin-bottom: 0;
+  text-align: left;
 }
 
-.team-card__bio {
-  font-size: 0.9375rem;
+.carousel__bio {
   color: #555;
   margin-bottom: 0;
+  text-align: left;
+}
+
+/* Controls row */
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.carousel__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--color-text-light);
+  background: transparent;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition);
+  flex-shrink: 0;
+}
+
+.carousel__btn:hover {
+  background-color: var(--color-text-light);
+  color: var(--color-accent);
+}
+
+.carousel__dots {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.carousel__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--color-text-light);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color var(--transition);
+}
+
+.carousel__dot.is-active {
+  background-color: var(--color-text-light);
+}
+
+/* Mobile: stack photo above info */
+@media (max-width: 640px) {
+  .carousel__slide {
+    flex-direction: column;
+  }
+  .carousel__photo {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* ------------------------------------------------------------

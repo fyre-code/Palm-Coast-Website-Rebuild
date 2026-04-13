@@ -296,35 +296,43 @@
   <!-- ===================== MEET THE TEAM ===================== -->
   <section class="section section--gray" id="team">
     <div class="container">
-      <h2 class="section__heading">Meet the Team</h2>
-      <div class="team__grid">
+      <h2>Meet the Team</h2>
 
-        <div class="team-card">
-          <!-- Replace src with real team photo -->
-          <img src="images/team-lori-criswell.jpg" alt="Dr. Lori Criswell, DPT" class="team-card__photo">
-          <div class="team-card__info">
-            <h3 class="team-card__name">[TEAM MEMBER NAME 1]</h3>
-            <p class="team-card__title">[TITLE / CREDENTIALS — e.g. Doctor of Physical Therapy, DPT]</p>
-            <p class="team-card__bio">[BIO PLACEHOLDER — 2–3 sentences about this team member's background, specializations, and what drew them to physical therapy.]</p>
+      <div class="team-carousel" id="team-carousel">
+
+        <div class="carousel__track">
+
+          <div class="carousel__slide is-active">
+            <img src="images/team-member-1.jpg" alt="[TEAM MEMBER NAME 1], [TITLE]" class="carousel__photo">
+            <div class="carousel__info">
+              <h3 class="carousel__name">[TEAM MEMBER NAME 1]</h3>
+              <p class="carousel__title">[TITLE / CREDENTIALS]</p>
+              <p class="carousel__bio">[BIO PLACEHOLDER — 2–3 sentences about this team member's background, specializations, and what drew them to physical therapy.]</p>
+            </div>
           </div>
+
+          <div class="carousel__slide">
+            <img src="images/team-member-2.jpg" alt="[TEAM MEMBER NAME 2], [TITLE]" class="carousel__photo">
+            <div class="carousel__info">
+              <h3 class="carousel__name">[TEAM MEMBER NAME 2]</h3>
+              <p class="carousel__title">[TITLE / CREDENTIALS]</p>
+              <p class="carousel__bio">[BIO PLACEHOLDER — 2–3 sentences about this team member's background, specializations, and what drew them to physical therapy.]</p>
+            </div>
+          </div>
+
         </div>
 
-        <div class="team-card">
-          <img src="images/team-member-2.jpg" alt="[TEAM MEMBER NAME 2], [TITLE]" class="team-card__photo">
-          <div class="team-card__info">
-            <h3 class="team-card__name">[TEAM MEMBER NAME 2]</h3>
-            <p class="team-card__title">[TITLE / CREDENTIALS]</p>
-            <p class="team-card__bio">[BIO PLACEHOLDER — 2–3 sentences about this team member's background, specializations, and what drew them to physical therapy.]</p>
+        <div class="carousel__controls">
+          <button class="carousel__btn carousel__btn--prev" aria-label="Previous team member">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="carousel__dots">
+            <button class="carousel__dot is-active" aria-label="Team member 1"></button>
+            <button class="carousel__dot" aria-label="Team member 2"></button>
           </div>
-        </div>
-
-        <div class="team-card">
-          <img src="images/team-member-3.jpg" alt="[TEAM MEMBER NAME 3], [TITLE]" class="team-card__photo">
-          <div class="team-card__info">
-            <h3 class="team-card__name">[TEAM MEMBER NAME 3]</h3>
-            <p class="team-card__title">[TITLE / CREDENTIALS]</p>
-            <p class="team-card__bio">[BIO PLACEHOLDER — 2–3 sentences about this team member's background, specializations, and what drew them to physical therapy.]</p>
-          </div>
+          <button class="carousel__btn carousel__btn--next" aria-label="Next team member">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
         </div>
 
       </div>
