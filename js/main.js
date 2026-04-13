@@ -111,6 +111,16 @@
     dots.forEach(function (dot, i) {
       dot.addEventListener('click', function () { goTo(i); });
     });
+
+    // Swipe support for mobile
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', function (e) {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    carousel.addEventListener('touchend', function (e) {
+      const delta = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(delta) > 50) goTo(delta < 0 ? current + 1 : current - 1);
+    }, { passive: true });
   }
 
 })();

@@ -409,11 +409,13 @@ p:last-child { margin-bottom: 0; }
   animation-delay: -5s;
 }
 
-/* Hide left-side extras on mobile to avoid overlapping text */
+/* Hide tools that overlap text on mobile */
 @media (max-width: 640px) {
   .hero__tool--loop,
   .hero__tool--crutch,
-  .hero__tool--pack {
+  .hero__tool--pack,
+  .hero__tool--band,
+  .hero__tool--roller {
     display: none;
   }
 }
@@ -1008,32 +1010,35 @@ p:last-child { margin-bottom: 0; }
    16. RESPONSIVE — TABLET (max 900px)
    ------------------------------------------------------------ */
 @media (max-width: 900px) {
-  .services__list,
+  .services__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* auto-fill prevents orphaned last card with 9 items */
   .testimonials__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 
-  .team__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .difference__pillars,
-  .difference__images {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* difference stays 3-col until 640px — 2-col always orphans the 3rd item */
 
   .footer__inner {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
 
+  /* brand spans full width so contact+social share the second row evenly */
+  .footer__brand { grid-column: 1 / -1; }
 }
 
 /* ------------------------------------------------------------
    17. RESPONSIVE — MOBILE (max 640px)
    ------------------------------------------------------------ */
 @media (max-width: 640px) {
-  /* Header — show hamburger, hide nav inline */
+  /* Header */
+  :root { --header-h: 80px; }
+  .header__logo img { height: 60px; }
+
+  /* Show hamburger, slide-down nav */
   .header__nav {
     position: fixed;
     top: var(--header-h);
@@ -1060,15 +1065,13 @@ p:last-child { margin-bottom: 0; }
     gap: 1.25rem;
   }
 
-  .header__cta {
-    display: none;
-  }
+  .header__cta { display: none; }
+  .nav__toggle  { display: flex; }
 
-  .nav__toggle {
-    display: flex;
-  }
+  /* Buttons */
+  .btn { font-size: 1rem; padding: 0.875rem 1.5rem; }
 
-  /* Sections */
+  /* Sections — single column */
   .services__list,
   .team__grid,
   .testimonials__grid,
@@ -1077,9 +1080,29 @@ p:last-child { margin-bottom: 0; }
     grid-template-columns: 1fr;
   }
 
+  /* Skip large background images — 85% overlay makes them nearly invisible anyway */
+  #difference, #services, #team, #testimonials {
+    background-image: none;
+  }
+
+  /* Footer */
   .footer__inner {
     grid-template-columns: 1fr;
     gap: 2rem;
     padding-block: 2.5rem;
   }
+
+  /* Carousel */
+  .carousel__btn  { display: none; }
+  .carousel__info { padding: 1.25rem 1rem; }
+  .carousel__dot  { width: 16px; height: 16px; }
+  .carousel__dots { padding-block: 12px; }
+}
+
+/* ------------------------------------------------------------
+   18. REDUCED MOTION
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg,
+  .hero__tool { animation: none; }
 }

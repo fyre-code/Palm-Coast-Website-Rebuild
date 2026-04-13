@@ -34,7 +34,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@1,400;1,600&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
@@ -45,9 +45,22 @@
   <header class="site-header" id="top">
     <div class="container header__inner">
       <a href="#top" class="header__logo">
-        <!-- Replace src with real logo path -->
         <img src="https://pbrlhyansxjdndccwtau.supabase.co/storage/v1/object/public/media-public/71072fb3-55dc-4eeb-8ea4-ce97fce9afdd/root/1775669337146_palm-coast-physical-therapy-logo.png" alt="Palm Coast Physical Therapy logo, featuring a minimalist palm tree icon and professional serif typography for sports rehabilitation and wellness in Naples, Florida.">
       </a>
+
+      <button id="nav-toggle" class="nav__toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" class="header__nav">
+        <ul class="nav__list">
+          <li><a href="#difference"   class="nav__link">The Palm Coast Difference</a></li>
+          <li><a href="#services"     class="nav__link">Services</a></li>
+          <li><a href="#team"         class="nav__link">Meet the Team</a></li>
+          <li><a href="#testimonials" class="nav__link">Testimonials</a></li>
+          <li><a href="#contact"      class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
