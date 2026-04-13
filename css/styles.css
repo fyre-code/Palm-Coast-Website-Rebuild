@@ -805,16 +805,24 @@ p:last-child { margin-bottom: 0; }
 
 .footer__inner {
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
   padding-block: 4rem;
+  align-items: stretch;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .footer__logo {
-  height: 126px;
-  width: auto;
+  height: 100%;
+  width: 100%;
   object-fit: contain;
-  margin-bottom: 1rem;
 }
 
 .footer__tagline {
