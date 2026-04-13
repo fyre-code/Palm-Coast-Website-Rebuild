@@ -63,70 +63,122 @@
 
       <!-- Therapy Ball — top right -->
       <div class="hero__tool hero__tool--ball">
-        <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="30" cy="30" r="26"/>
-          <path d="M8,24 Q30,14 52,24"/>
-          <path d="M8,36 Q30,46 52,36"/>
+        <svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="35" cy="35" r="30"/>
+          <!-- latitude lines for 3-D sphere look -->
+          <ellipse cx="35" cy="35" rx="30" ry="10"/>
+          <ellipse cx="35" cy="35" rx="30" ry="20"/>
+          <!-- vertical longitude line -->
+          <ellipse cx="35" cy="35" rx="10" ry="30"/>
         </svg>
       </div>
 
       <!-- Foam Roller — mid right -->
       <div class="hero__tool hero__tool--roller">
-        <svg viewBox="0 0 90 34" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="10" y="7" width="70" height="20" rx="10"/>
-          <ellipse cx="10" cy="17" rx="8" ry="10"/>
-          <ellipse cx="80" cy="17" rx="8" ry="10"/>
+        <svg viewBox="0 0 110 44" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- cylinder body -->
+          <rect x="16" y="10" width="78" height="24" rx="0"/>
+          <!-- end caps -->
+          <ellipse cx="16" cy="22" rx="9" ry="12"/>
+          <ellipse cx="94" cy="22" rx="9" ry="12"/>
+          <!-- texture ridges -->
+          <line x1="36" y1="10" x2="36" y2="34"/>
+          <line x1="55" y1="10" x2="55" y2="34"/>
+          <line x1="74" y1="10" x2="74" y2="34"/>
         </svg>
       </div>
 
-      <!-- Resistance Band — upper right -->
+      <!-- Resistance Band with handles — upper right -->
       <div class="hero__tool hero__tool--band">
-        <svg viewBox="0 0 90 50" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5,40 Q25,5 45,25 Q65,45 85,10"/>
+        <svg viewBox="0 0 110 65" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- band body (two parallel lines for flat band look) -->
+          <path d="M18,22 Q40,5 60,32 Q80,58 95,42"/>
+          <path d="M18,30 Q40,13 60,40 Q80,66 95,50"/>
+          <!-- left handle -->
+          <rect x="5" y="18" width="13" height="18" rx="6"/>
+          <!-- right handle -->
+          <rect x="95" y="38" width="13" height="18" rx="6"/>
         </svg>
       </div>
 
       <!-- Dumbbell — lower right -->
       <div class="hero__tool hero__tool--dumbbell">
-        <svg viewBox="0 0 90 30" fill="none" stroke="currentColor" stroke-width="1.5">
-          <line x1="26" y1="15" x2="64" y2="15"/>
-          <rect x="2" y="4" width="11" height="22" rx="2"/>
-          <rect x="14" y="8" width="11" height="14" rx="2"/>
-          <rect x="65" y="8" width="11" height="14" rx="2"/>
-          <rect x="77" y="4" width="11" height="22" rx="2"/>
+        <svg viewBox="0 0 110 38" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- bar -->
+          <line x1="34" y1="19" x2="76" y2="19" stroke-width="2.5"/>
+          <!-- collars -->
+          <rect x="30" y="13" width="5" height="12" rx="1"/>
+          <rect x="75" y="13" width="5" height="12" rx="1"/>
+          <!-- left weight plates (outer large, inner smaller) -->
+          <rect x="16" y="4"  width="9"  height="30" rx="2"/>
+          <rect x="25" y="9"  width="7"  height="20" rx="1"/>
+          <!-- right weight plates -->
+          <rect x="78" y="9"  width="7"  height="20" rx="1"/>
+          <rect x="85" y="4"  width="9"  height="30" rx="2"/>
         </svg>
       </div>
 
       <!-- Balance Board — top-left corner -->
       <div class="hero__tool hero__tool--board">
-        <svg viewBox="0 0 90 44" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="5" y="5" width="80" height="16" rx="3"/>
-          <ellipse cx="45" cy="36" rx="18" ry="8"/>
+        <svg viewBox="0 0 110 58" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- board deck (slight taper for perspective) -->
+          <path d="M6,22 L104,22 L104,32 L6,32 Z"/>
+          <!-- grip texture dots on deck -->
+          <circle cx="28"  cy="27" r="2" fill="currentColor"/>
+          <circle cx="55"  cy="27" r="2" fill="currentColor"/>
+          <circle cx="82"  cy="27" r="2" fill="currentColor"/>
+          <!-- half-cylinder rocker underneath -->
+          <path d="M28,32 Q55,52 82,32"/>
+          <ellipse cx="55" cy="32" rx="27" ry="7"/>
         </svg>
       </div>
 
       <!-- Loop Resistance Band — left side, upper-mid -->
       <div class="hero__tool hero__tool--loop">
-        <svg viewBox="0 0 70 40" fill="none" stroke="currentColor" stroke-width="3">
-          <ellipse cx="35" cy="20" rx="30" ry="14"/>
+        <svg viewBox="0 0 90 55" fill="none" stroke="currentColor" stroke-width="2.5">
+          <!-- outer edge of band -->
+          <ellipse cx="45" cy="28" rx="40" ry="22"/>
+          <!-- inner edge (gives band its thickness) -->
+          <ellipse cx="45" cy="28" rx="30" ry="14" stroke-width="1"/>
         </svg>
       </div>
 
       <!-- Crutch — left side, mid -->
       <div class="hero__tool hero__tool--crutch">
-        <svg viewBox="0 0 35 90" fill="none" stroke="currentColor" stroke-width="1.5">
-          <line x1="17" y1="10" x2="17" y2="85"/>
-          <path d="M5,22 Q17,8 29,22"/>
-          <line x1="8" y1="34" x2="26" y2="34"/>
+        <svg viewBox="0 0 44 110" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- two legs at bottom (classic axillary crutch split) -->
+          <line x1="22" y1="72" x2="10" y2="106"/>
+          <line x1="22" y1="72" x2="34" y2="106"/>
+          <!-- rubber tips -->
+          <ellipse cx="10"  cy="106" rx="4" ry="2.5"/>
+          <ellipse cx="34"  cy="106" rx="4" ry="2.5"/>
+          <!-- main shaft -->
+          <line x1="22" y1="14" x2="22" y2="72"/>
+          <!-- underarm pad (curved top) -->
+          <path d="M7,22 Q22,10 37,22"/>
+          <line x1="7" y1="22" x2="7"  y2="28"/>
+          <line x1="37" y1="22" x2="37" y2="28"/>
+          <line x1="7" y1="28" x2="37" y2="28"/>
+          <!-- forearm grip bar -->
+          <line x1="10" y1="50" x2="34" y2="50"/>
+          <!-- grip padding bump -->
+          <rect x="16" y="46" width="12" height="8" rx="4"/>
         </svg>
       </div>
 
       <!-- Ice / Heat Pack — left side, lower -->
       <div class="hero__tool hero__tool--pack">
-        <svg viewBox="0 0 70 50" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="5" y="5" width="60" height="40" rx="8"/>
-          <line x1="22" y1="25" x2="48" y2="25"/>
-          <line x1="35" y1="13" x2="35" y2="37"/>
+        <svg viewBox="0 0 90 60" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- pack body -->
+          <rect x="6" y="8" width="78" height="44" rx="12"/>
+          <!-- snowflake/asterisk symbol (ice pack indicator) -->
+          <line x1="34" y1="30" x2="56" y2="30"/>
+          <line x1="45" y1="19" x2="45" y2="41"/>
+          <line x1="37" y1="22" x2="53" y2="38"/>
+          <line x1="53" y1="22" x2="37" y2="38"/>
+          <!-- strap tabs on left and right -->
+          <path d="M6,30 Q2,30 2,26 Q2,22 6,22"/>
+          <path d="M84,30 Q88,30 88,26 Q88,22 84,22"/>
         </svg>
       </div>
 
