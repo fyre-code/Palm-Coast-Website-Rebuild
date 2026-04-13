@@ -920,6 +920,15 @@ p:last-child { margin-bottom: 0; }
   color: var(--color-text-light);
 }
 
+/* Restore card text colors — white-bg cards inside colored sections */
+#team .carousel__name                        { color: var(--color-primary); }
+#team .carousel__credentials,
+#team .carousel__bio                         { color: #555; }
+#team .carousel__title                       { color: var(--color-accent); }
+
+#testimonials .testimonial-card__quote       { color: var(--color-text); }
+#testimonials .testimonial-card__attr        { color: var(--color-primary); }
+
 /* Bullet dots on orange bg: switch to white */
 #difference .difference__list li::before {
   background-color: var(--color-text-light);
