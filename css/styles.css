@@ -635,6 +635,8 @@ p:last-child { margin-bottom: 0; }
 /* Slides — only .is-active shows */
 .carousel__track {
   position: relative;
+  flex: 1;
+  min-width: 0;
 }
 
 .carousel__slide {
@@ -697,13 +699,20 @@ p:last-child { margin-bottom: 0; }
   text-align: left;
 }
 
-/* Controls row */
-.carousel__controls {
+/* Stage: arrows flank the card */
+.carousel__stage {
   display: flex;
   align-items: center;
+  gap: 1.25rem;
+}
+
+
+/* Dots row below the stage */
+.carousel__dots {
+  display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.75rem;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
 }
 
 .carousel__btn {
@@ -724,11 +733,6 @@ p:last-child { margin-bottom: 0; }
 .carousel__btn:hover {
   background-color: var(--color-text-light);
   color: var(--color-accent);
-}
-
-.carousel__dots {
-  display: flex;
-  gap: 0.6rem;
 }
 
 .carousel__dot {
