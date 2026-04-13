@@ -674,6 +674,15 @@ p:last-child { margin-bottom: 0; }
   text-align: left;
 }
 
+.carousel__credentials {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0;
+  text-align: left;
+  letter-spacing: 0.04em;
+}
+
 .carousel__title {
   font-size: clamp(1.25rem, 2.75vw, 1.75rem);
   font-weight: 600;
