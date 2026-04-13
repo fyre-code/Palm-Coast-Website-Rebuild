@@ -807,7 +807,8 @@ p:last-child { margin-bottom: 0; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
-  padding-block: 4rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
   align-items: stretch;
 }
 
@@ -901,10 +902,10 @@ p:last-child { margin-bottom: 0; }
 }
 
 .footer__bottom {
-  padding-block: 1.25rem;
+  padding-block: 0.75rem;
   text-align: center;
   font-size: 0.875rem;
-  color: rgba(26, 143, 160, 0.6);
+  color: #1a8fa0;
 }
 
 /* ------------------------------------------------------------
@@ -930,6 +931,96 @@ p:last-child { margin-bottom: 0; }
 #team h2, #team h3, #team p,
 #testimonials h2, #testimonials h3, #testimonials p {
   color: var(--color-text-light);
+}
+
+/* --- Section corner tool decorations --- */
+#difference,
+#services,
+#team,
+#testimonials {
+  position: relative;
+  overflow: hidden;
+}
+
+#difference > .container,
+#services   > .container,
+#team       > .container,
+#testimonials > .container {
+  position: relative;
+  z-index: 1;
+}
+
+#difference::before, #difference::after,
+#services::before,   #services::after,
+#team::before,       #team::after,
+#testimonials::before, #testimonials::after {
+  content: '';
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.13;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Upper-left */
+#difference::before,
+#services::before,
+#team::before,
+#testimonials::before {
+  top: 1.5rem;
+  left: 1.5rem;
+  background-position: top left;
+}
+
+/* Lower-right */
+#difference::after,
+#services::after,
+#team::after,
+#testimonials::after {
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-position: bottom right;
+}
+
+/* — Difference: therapy ball (UL) + foam roller (LR) — */
+#difference::before {
+  width: 130px; height: 130px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 70' fill='none' stroke='white' stroke-width='1.5'%3E%3Ccircle cx='35' cy='35' r='30'/%3E%3Cellipse cx='35' cy='35' rx='30' ry='10'/%3E%3Cellipse cx='35' cy='35' rx='30' ry='20'/%3E%3Cellipse cx='35' cy='35' rx='10' ry='30'/%3E%3C/svg%3E");
+}
+#difference::after {
+  width: 180px; height: 73px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 44' fill='none' stroke='white' stroke-width='1.5'%3E%3Crect x='16' y='10' width='78' height='24' rx='0'/%3E%3Cellipse cx='16' cy='22' rx='9' ry='12'/%3E%3Cellipse cx='94' cy='22' rx='9' ry='12'/%3E%3Cline x1='36' y1='10' x2='36' y2='34'/%3E%3Cline x1='55' y1='10' x2='55' y2='34'/%3E%3Cline x1='74' y1='10' x2='74' y2='34'/%3E%3C/svg%3E");
+}
+
+/* — Services: resistance band (UL) + dumbbell (LR) — */
+#services::before {
+  width: 180px; height: 107px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 65' fill='none' stroke='white' stroke-width='1.5'%3E%3Cpath d='M18,22 Q40,5 60,32 Q80,58 95,42'/%3E%3Cpath d='M18,30 Q40,13 60,40 Q80,66 95,50'/%3E%3Crect x='5' y='18' width='13' height='18' rx='6'/%3E%3Crect x='95' y='38' width='13' height='18' rx='6'/%3E%3C/svg%3E");
+}
+#services::after {
+  width: 180px; height: 62px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 38' fill='none' stroke='white' stroke-width='1.5'%3E%3Cline x1='34' y1='19' x2='76' y2='19' stroke-width='2.5'/%3E%3Crect x='30' y='13' width='5' height='12' rx='1'/%3E%3Crect x='75' y='13' width='5' height='12' rx='1'/%3E%3Crect x='16' y='4' width='9' height='30' rx='2'/%3E%3Crect x='25' y='9' width='7' height='20' rx='1'/%3E%3Crect x='78' y='9' width='7' height='20' rx='1'/%3E%3Crect x='85' y='4' width='9' height='30' rx='2'/%3E%3C/svg%3E");
+}
+
+/* — Team: balance board (UL) + loop band (LR) — */
+#team::before {
+  width: 180px; height: 95px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 110 58' fill='none' stroke='white' stroke-width='1.5'%3E%3Cpath d='M6,22 L104,22 L104,32 L6,32 Z'/%3E%3Ccircle cx='28' cy='27' r='2' fill='white'/%3E%3Ccircle cx='55' cy='27' r='2' fill='white'/%3E%3Ccircle cx='82' cy='27' r='2' fill='white'/%3E%3Cpath d='M28,32 Q55,52 82,32'/%3E%3Cellipse cx='55' cy='32' rx='27' ry='7'/%3E%3C/svg%3E");
+}
+#team::after {
+  width: 160px; height: 98px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 55' fill='none' stroke='white' stroke-width='2.5'%3E%3Cellipse cx='45' cy='28' rx='40' ry='22'/%3E%3Cellipse cx='45' cy='28' rx='30' ry='14' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* — Testimonials: crutch (UL) + ice pack (LR) — */
+#testimonials::before {
+  width: 80px; height: 190px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 120' fill='none' stroke='white' stroke-width='1.5'%3E%3Crect x='4' y='6' width='42' height='8' rx='3'/%3E%3Cline x1='8' y1='14' x2='25' y2='38'/%3E%3Cline x1='42' y1='14' x2='25' y2='38'/%3E%3Cline x1='25' y1='38' x2='25' y2='85'/%3E%3Cline x1='12' y1='60' x2='38' y2='60'/%3E%3Crect x='18' y='56' width='14' height='8' rx='3'/%3E%3Cline x1='25' y1='85' x2='12' y2='114'/%3E%3Cline x1='25' y1='85' x2='38' y2='114'/%3E%3Cellipse cx='12' cy='114' rx='4' ry='2.5'/%3E%3Cellipse cx='38' cy='114' rx='4' ry='2.5'/%3E%3C/svg%3E");
+}
+#testimonials::after {
+  width: 160px; height: 107px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 60' fill='none' stroke='white' stroke-width='1.5'%3E%3Crect x='6' y='8' width='78' height='44' rx='12'/%3E%3Cline x1='34' y1='30' x2='56' y2='30'/%3E%3Cline x1='45' y1='19' x2='45' y2='41'/%3E%3Cline x1='37' y1='22' x2='53' y2='38'/%3E%3Cline x1='53' y1='22' x2='37' y2='38'/%3E%3Cpath d='M6,30 Q2,30 2,26 Q2,22 6,22'/%3E%3Cpath d='M84,30 Q88,30 88,26 Q88,22 84,22'/%3E%3C/svg%3E");
 }
 
 /* Restore card text colors — white-bg cards inside colored sections */
