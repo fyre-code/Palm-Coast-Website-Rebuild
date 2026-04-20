@@ -123,4 +123,25 @@
     }, { passive: true });
   }
 
+  /* ----------------------------------------------------------
+     Review Modal
+     ---------------------------------------------------------- */
+  const reviewBtn   = document.getElementById('review-btn');
+  const reviewModal = document.getElementById('review-modal');
+
+  if (reviewBtn && reviewModal) {
+    const backdrop = reviewModal.querySelector('.modal__backdrop');
+    const closeBtn = reviewModal.querySelector('.modal__close');
+
+    function openModal()  { reviewModal.classList.add('is-open');    document.body.style.overflow = 'hidden'; }
+    function closeModal() { reviewModal.classList.remove('is-open'); document.body.style.overflow = ''; }
+
+    reviewBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
+
 })();
