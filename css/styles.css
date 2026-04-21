@@ -1065,8 +1065,9 @@ p:last-child { margin-bottom: 0; }
     gap: 1.25rem;
   }
 
-  .header__cta { display: none; }
-  .nav__toggle  { display: flex; }
+  .header__cta  { display: none; }
+  .nav__toggle  { display: none; }
+  .header__nav  { display: none !important; }
 
   /* Buttons */
   .btn { font-size: 1rem; padding: 0.875rem 1.5rem; }
